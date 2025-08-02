@@ -1,3 +1,4 @@
+#in this file i have implemented what ever i have studied till now
 from fastapi import FastAPI, Form, File, UploadFile, HTTPException, status, Depends
 from typing import Optional
 from pydantic import BaseModel
@@ -134,5 +135,6 @@ class Settings:
 @app.get("/config")
 def get_config(settings: Settings = Depends(Settings)):
     return {"api_key": settings.api_key}
+
 
 
