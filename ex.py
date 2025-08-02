@@ -125,6 +125,8 @@ def upload_profile_pic(photo: UploadFile = File(jpg=True)):
 # def register_user(user: User):
 #     return user
 
+
+#dependency using class
 class Settings:
     def __init__(self):
         self.api_key = "super-secret"
@@ -132,4 +134,5 @@ class Settings:
 @app.get("/config")
 def get_config(settings: Settings = Depends(Settings)):
     return {"api_key": settings.api_key}
+
 
